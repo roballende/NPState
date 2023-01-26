@@ -16,12 +16,13 @@ function Search({ parks, setParkID }) {
     // SELECT PARK & SET ID
     const onInputChange = (e) => {
         const selectedPark = parks.find((park) => park.name === e.target.value)
-        setParkID(selectedPark.id)
-        // setResults([]) WHY DOES THIS NOT WORK TO CLEAR THE RESULT ARRAY
+        if (selectedPark) {
+            setParkID(selectedPark.id)
+        }
     }
 
     return (
-        <div>
+        <div  className='component'>
             <h4>SEARCH</h4>
             <div>
                 <input
@@ -35,8 +36,8 @@ function Search({ parks, setParkID }) {
                     onInput={onInputChange}
                 />
                 <datalist id='results'>
-                    {results.map((park, index) => (
-                        <option key={index} value={park.name} />
+                    {results.map((park) => (
+                        <option key={park.id} value={park.name} />
                     ))}
                 </datalist>
             </div>

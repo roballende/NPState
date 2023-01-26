@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.review-form .input-item {
+    width: 100%; /* will resize with page */
+    padding: 20px;
+    border: solid 1px var(--gold);
+    background: transparent;
+}
+
+.review-form textarea {
+    width: 500px;
+    height: 200px;
+    resize: none;
+}
+
+.review-form ::placeholder {
+    color: black;
+}
+
+.send-button {
+    padding: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.review-form.input-item:hover {
+    background: var(--lightGreen);
+    transition: .3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    outline-width: 0;
+    color: black;
+}

@@ -35,9 +35,28 @@ class ApplicationController < Sinatra::Base
         review.to_json(include: { user: { only: [:name] } })
     end
 
-
     # PATCH
+    patch '/reviews/:id' do
+        review = Review.find(params[:id])
+        review.update(
+            comment: params[:comment],
+            rating: params[:rating],
+            favorite: params[:favorite],
+            park_id: params[:park_id],
+            user_id: params[:user_id]
+        )
+        review.to_json(include: { user: { only: [:name] } })
+    end
 
     # DELETE
+    delete '/reviews/:id' do
+        # find the review using the ID
+        review = Review.find(params[:id])
+        # delete the review
+        review.destroy
+        # send a response with the deleted review as JSON
+        review.to_json
+    end
+
 
 end

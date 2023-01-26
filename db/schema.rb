@@ -10,11 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_23_192614) do
+ActiveRecord::Schema.define(version: 2023_01_26_003042) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "url"
+    t.string "activity"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "hazard_title"
+    t.string "hazard_desc"
+    t.string "hazard_url"
+    t.string "hazard_date"
+    t.json "img_urls"
+    t.string "states"
+    t.string "directions"
+    t.json "activities"
   end
 
   create_table "reviews", force: :cascade do |t|

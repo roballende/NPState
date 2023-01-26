@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+:root {
+    --beige: #efe0b4;
+    --lightGreen: #2c462e;
+    --darkGreen: #0d1e10;
+    --gold: #8b7735;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    background-color: var(--beige);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: "Palatino", serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+    margin: 20px 0px 0px 20px;
+    padding: 10px;
+    border: solid 0.5px var(--gold);
+    font-size: 16px;
+    color: var(--gold);
+    font-weight: 300;
+    background: transparent;
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+    background: var(--gold);
+    color: var(--darkGreen);
+    transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+div {
+    /* border: 1px solid red; */
+}
+
+.app {
+}
+
+.component {
+}
+
+.star {
+    color: var(--gold);
+}
+
+/* NAV */
+
+/* SEARCH */
+
+/* 1ST LEVEL */
+
+.level-one {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 30px 40px 0px 30px;
+}
+
+/* INFO LEFT */
+.park-intro {
+    padding: 40px;
+}
+
+.park-intro h1 {
+    margin: 0px;
+}
+
+.park-intro h2 {
+    margin: 0px;
+}
+
+.park-intro h4 {
+    margin: 0px;
+}
+
+/* INFO RIGHT */
+.columns {
+    display: grid;
+    height: 800px;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--lightGreen);
+    color: var(--gold);
+    /* box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.75); */
+}
+
+.columns h1 {
+    text-align: center;
+}
+
+.column-one {
+    border-right: 2px solid var(--gold);
+    max-height: 600px;
+}
+
+.park-info {
+    padding: 0px 10px 10px 30px;
+}
+
+.column-two {
+    max-height: 500px;
+}
+
+.park-activities {
+    padding: 0px 10px 10px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+}
+
+/* MOUNTAINS */
+
+.mountains {
+    position: absolute;
+    z-index: 1; 
+    top: 620px;
+    width: 100%;
+}
+
+/* 2ND LEVEL */
+
+.level-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /* height: 70%; */
+    background-color: var(--darkGreen);
+    /* box-shadow: 5px 10px 5px 0px rgba(0, 0, 0, 0.75); */
+}
+
+/* FORM */
+
+.review-form {
+    padding: 20px;
+}
+
+.review-form textarea {
+    border: solid 1px var(--gold);
+    color: var(--gold);
+    background: transparent;
+    resize: none;
+    width: 50%;
+    height: 200px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+p.star {
+    display: inline-block;
+}
+
+/* MAP */
+
+.map-container {
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+/* .marker {
+    position: absolute;
+    color: red;
+    font-size: 80px;
+} */
+
+/* GALLERY */
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
 }
