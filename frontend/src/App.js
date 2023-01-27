@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react"
 import "./App.css"
-import Search from "./components/Search"
 import Info from "./components/Info"
 import Reviews from "./components/Reviews"
 import Form from "./components/Form"
-import Map from "./components/Map"
 import ImageGallery from "./components/ImageGallery"
 
 function App() {
@@ -39,6 +37,9 @@ function App() {
     const [latitude, setLatitude] = useState(44.409286)
     const [longitude, setLongitude] = useState(-68.247501)
 
+    // SET GOOGLE MAP 
+    const [mapURL, setMapUrl] = useState('https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=acadia national park&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed')
+
     // FETCH ALL PARKS
     useEffect(() => {
         fetch("http://localhost:9292/parks")
@@ -58,6 +59,7 @@ function App() {
                 setLatitude(park.latitude)
                 setLongitude(park.longitude)
                 setparkActivities(park.activities)
+                setMapUrl('https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=' + {parkName} + '&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed')
             })
     }, [parkID])
 
@@ -96,14 +98,17 @@ function App() {
 
     return (
         <div className='app'>
-            <Search parks={parks} setParkID={setParkID} />
-            <Info parkID={parkID} selectedPark={selectedPark} parkName={parkName} parkActivities={parkActivities} />
+            <Info parks={parks} setParkID={setParkID} parkID={parkID} selectedPark={selectedPark} parkName={parkName} parkActivities={parkActivities} latitude={latitude} longitude={longitude} mapURL={mapURL}/>
             <div className="level-two">
                 <Form userID={userID} selectedPark={selectedPark} newReviewSubmit={newReviewSubmit} />
-                <Map latitude={latitude} longitude={longitude} />
+                <Reviews parkReviews={parkReviews} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
             </div>
+<<<<<<< Updated upstream
             <Reviews parkReviews={parkReviews} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
             <ImageGallery parkName={parkName} parkImages={parkImages} />
+=======
+            <ImageGallery parkImages={parkImages} />
+>>>>>>> Stashed changes
         </div>
     )
 }

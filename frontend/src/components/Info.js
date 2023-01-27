@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
+import Search from "./Search"
 import StarIcon from "@mui/icons-material/Star"
 import StarBorderIcon from "@mui/icons-material/StarBorder"
 import mountains from "./images/mountains.png"
+import Map from "./Map"
 
-function Info({ parkID, selectedPark, parkName, parkActivities }) {
+function Info({ parks, setParkID, parkID, selectedPark, parkName, parkActivities, latitude, longitude, mapURL }) {
     // SET AVG RATINGS
     const [starRating, setStarRating] = useState("")
     const [parkState, setParkState] = useState("Maine")
@@ -81,6 +83,7 @@ function Info({ parkID, selectedPark, parkName, parkActivities }) {
             })
     }, [parkID])
 
+    // FETCH PARK STATE & CONVERT TO FULL NAME
     useEffect(() => {
         fetch(`http://localhost:9292/parks/${parkID}`)
             .then((resp) => resp.json())
@@ -199,52 +202,78 @@ function Info({ parkID, selectedPark, parkName, parkActivities }) {
         }
     }
 
-    const activityList = ["Skiing", "Hiking", "Fishing", "Camping", "Hunting", "Horseback Riding", "Biking", "Canoeing", "Kayaking", "RV Camping", "Rock Climbing", "Wildlife Watching", "Bird Watching", "Stargazing", "Whitewater Rafting", "Scenic Driving", "Museum Exhibits", "Guided Tours", "Boat Tours"]
+    const activityList = [
+        "Skiing",
+        "Hiking",
+        "Fishing",
+        "Camping",
+        "Hunting",
+        "Horseback Riding",
+        "Biking",
+        "Canoeing",
+        "Kayaking",
+        "RV Camping",
+        "Rock Climbing",
+        "Wildlife Watching",
+        "Bird Watching",
+        "Stargazing",
+        "Whitewater Rafting",
+        "Scenic Driving",
+        "Museum Exhibits",
+        "Guided Tours",
+        "Boat Tours",
+    ]
 
     return (
         <div>
             <div className='level-one'>
                 <div className='park-intro'>
+                    <Search parks={parks} setParkID={setParkID} parkID={parkID} />
                     <h2>{parkState}</h2>
                     <br></br>
                     <h1>{selectedPark.name}</h1>
                     <br></br>
-                    <h2>{selectedPark.description}</h2>
-                </div>
-                <div className='columns'>
-                    <div className='column-one'>
-                        <h1>PARK INFO</h1>
-                        <div className='park-info'>
-                            <h4>PARK DIRECTIONS</h4>
-                            <div>{selectedPark.directions}</div>
-                            <h4>
-                                <a href={baseURl} target='_blank'>
-                                    Click here for more information on {parkName}
-                                </a>
-                            </h4>
-                            <h4>
-                                <a href={baseURl} target='_blank'>
-                                    Click here for {parkName} campsite reservations
-                                </a>
-                            </h4>
-                            <h4>AVERAGE PARK RATING</h4>
-                            <div className='star'>{starRating}</div>
-                            <h4>PARK ALERTS</h4>
-                            <a href={selectedPark.hazard_url} target='_blank'>
-                                {selectedPark.hazard_title}
+                    <h3>{selectedPark.description}</h3>
+                    <h3>
+                        <em>
+                            <a href={selectedPark.url} target='_blank'>
+                                Learn more about {parkName}
                             </a>
-                            {selectedPark.hazard_desc}
-                            {selectedPark.hazard_date}
+                        </em>
+                    </h3>
+                </div>
+                <div className='park-info'>
+                    <h2>PARK INFORMATION</h2>
+                    <div className='columns-both'>
+                        <div className='column-one'>
+                            <h4>ACTIVITIES</h4>
+                            <div className='park-activities'>
+                                {parkActivities
+                                    .filter((activity) => activityList.includes(activity))
+                                    .map((activity) => (
+                                        <li>{activity}</li>
+                                    ))}
+                            </div>
+                            <br></br>
+                            <h3>
+                                <em>
+                                    <a href={baseURl} target='_blank'>
+                                        Click here for {parkName} Campsite Reservations
+                                    </a>
+                                </em>
+                            </h3>
+                            <Map latitude={latitude} longitude={longitude} />
                         </div>
-                    </div>
-                    <div className='column-two'>
-                        <h1>PARK ACTIVITIES</h1>
-                        <div className='park-activities'>
-                            {parkActivities
-                                .filter((activity) => activityList.includes(activity))
-                                .map((activity) => (
-                                    <li>{activity}</li>
-                            ))}
+                        <div className='column-two'>
+                            <h4>RATING</h4>
+                            <div className='star'>{starRating}</div>
+                            <h4>DIRECTIONS</h4>
+                            <p>{selectedPark.directions}</p>
+                            <h4>ALERTS</h4>
+                            <a href={selectedPark.hazard_url} target='_blank'>
+                                <p>{selectedPark.hazard_date}</p>
+                                <p>{selectedPark.hazard_title}</p>
+                            </a>
                         </div>
                     </div>
                 </div>

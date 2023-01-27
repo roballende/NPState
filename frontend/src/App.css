@@ -1,8 +1,8 @@
 :root {
     --beige: #efe0b4;
     --lightGreen: #2c462e;
-    --darkGreen: #0d1e10;
-    --gold: #8b7735;
+    --darkGreen: #071f0e;
+    --gold: #ac9341;
 }
 
 html {
@@ -10,11 +10,11 @@ html {
 }
 
 body {
-    font-family: "Palatino", serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 button {
-    margin: 20px 0px 0px 20px;
+    /* margin: 20px 0px 0px 20px; */
     padding: 10px;
     border: solid 0.5px var(--gold);
     font-size: 16px;
@@ -48,23 +48,22 @@ li {
     list-style-type: none;
 }
 
-div {
-    /* border: 1px solid red; */
-}
-
-.app {
-}
-
-.component {
+h1,
+h3,
+h2,
+h4,
+h5,
+h6 {
+    font-family: "Noto Serif", serif;
 }
 
 .star {
     color: var(--gold);
 }
 
-/* NAV */
-
-/* SEARCH */
+p.star {
+    display: inline-block;
+}
 
 /* 1ST LEVEL */
 
@@ -75,89 +74,181 @@ div {
     padding: 30px 40px 0px 30px;
 }
 
-/* INFO LEFT */
+.level-one h3 {
+    font-family: "Montserrat", sans-serif;
+    color: var(--gold);
+}
+
+/* 1ST LEVEL - INFO LEFT */
+
+.park-intro input {
+    background: var(--darkGreen);
+    color: var(--gold);
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 40px;
+}
+
+.park-intro input::placeholder {
+    color: var(--gold);
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
 .park-intro {
-    padding: 40px;
+    padding: 0px 40px 0px 0px;
 }
 
 .park-intro h1 {
     margin: 0px;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: var(--lightGreen);
 }
 
 .park-intro h2 {
-    margin: 0px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--gold);
 }
 
-.park-intro h4 {
-    margin: 0px;
-}
 
-/* INFO RIGHT */
-.columns {
-    display: grid;
+
+/* 1ST LEVEL - INFO RIGHT */
+
+.park-info {
     height: 800px;
-    grid-template-columns: 1fr 1fr;
     background-color: var(--lightGreen);
     color: var(--gold);
-    /* box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.75); */
+    text-align: center;
+    box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.columns h1 {
-    text-align: center;
+.park-info h2 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--gold);
+}
+
+.park-info h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold);
+}
+
+.columns-both {
+    border-top: 1px solid var(--gold);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .column-one {
-    border-right: 2px solid var(--gold);
-    max-height: 600px;
-}
-
-.park-info {
-    padding: 0px 10px 10px 30px;
+    border-right: 1px solid var(--gold);
+    padding: 0px 10px;
 }
 
 .column-two {
-    max-height: 500px;
+    padding: 0px 10px;
 }
 
 .park-activities {
-    padding: 0px 10px 10px 30px;
+    padding: 0px 70px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
+    grid-template-columns: .5fr .5fr;
+    gap: 0px;
+}
+
+.hazard-details {
+    padding-top: 2px;
+    line-height: 5px;
+}
+
+/* 1ST LEVEL - MAP */
+
+.map-container {
+    margin-top: 20px;
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    position: absolute;
+    z-index: 5;
+    color: red;
+    font-size: 25px;
 }
 
 /* MOUNTAINS */
 
 .mountains {
     position: absolute;
-    z-index: 1; 
-    top: 620px;
+    z-index: 1;
+    top: 550px;
     width: 100%;
 }
 
 /* 2ND LEVEL */
 
 .level-two {
+    position: absolute;
+    z-index: 2;
+    top: 900px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    /* height: 70%; */
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr .2fr;
     background-color: var(--darkGreen);
-    /* box-shadow: 5px 10px 5px 0px rgba(0, 0, 0, 0.75); */
+    color: var(--gold);
+    padding: 30px 40px 0px 30px;
+    text-align: center;
 }
 
-/* FORM */
+.level-two h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--gold);
+}
+
+/* 2ND LEVEL - FORM */
 
 .review-form {
-    padding: 20px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .review-form textarea {
-    border: solid 1px var(--gold);
+    border: solid .5px var(--gold);
     color: var(--gold);
     background: transparent;
     resize: none;
-    width: 50%;
+    width: 90%;
     height: 200px;
 }
 
@@ -166,25 +257,36 @@ input:focus {
     outline: none;
 }
 
-p.star {
+.rating-submit {
     display: inline-block;
+    padding: 0px 20px;
 }
 
-/* MAP */
+/* 2ND LEVEL - REVIEWS */
 
-.map-container {
+.review-container {
+    border: solid .5px var(--gold);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0px;
+    padding: 20px;
 }
 
-.map {
-    width: 100%;
-    height: 100%;
+.review textarea {
+    border: solid .5px var(--gold);
+    color: var(--gold);
+    background: transparent;
+    resize: none;
+    width: 90%;
 }
 
-/* .marker {
-    position: absolute;
-    color: red;
-    font-size: 80px;
-} */
+.user {
+    font-weight: 600;
+}
+
+
+
 
 /* GALLERY */
 
