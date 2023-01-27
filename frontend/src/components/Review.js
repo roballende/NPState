@@ -145,7 +145,6 @@ function Review({ userID, username, selectedPark, review, handleReviewDelete, ha
                 <div>
                     <div>"{review.comment}"</div>
                     <div>{starRating}</div>
-                    {/* <CreateOutlinedIcon onClick={() => setEditing(!editing)} />  */}
                     {review.user.name === username ? <CreateOutlinedIcon onClick={() => setEditing(!editing)} /> : <div></div>}
                 </div>
             )}

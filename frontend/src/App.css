@@ -11,6 +11,9 @@ html {
 
 body {
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 button {
@@ -71,7 +74,7 @@ p.star {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr 1fr;
-    padding: 30px 40px 0px 30px;
+    padding: 30px 0px 0px 30px;
 }
 
 .level-one h3 {
@@ -121,8 +124,6 @@ p.star {
     color: var(--gold);
 }
 
-
-
 /* 1ST LEVEL - INFO RIGHT */
 
 .park-info {
@@ -167,13 +168,13 @@ p.star {
 }
 
 .column-two {
-    padding: 0px 10px;
+    padding: 0px 25px 0 25px;
 }
 
 .park-activities {
     padding: 0px 70px;
     display: grid;
-    grid-template-columns: .5fr .5fr;
+    grid-template-columns: 0.5fr 0.5fr;
     gap: 0px;
 }
 
@@ -220,7 +221,7 @@ p.star {
     top: 900px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 1fr .2fr;
+    grid-template-rows: 1fr 0.2fr;
     background-color: var(--darkGreen);
     color: var(--gold);
     padding: 30px 40px 0px 30px;
@@ -244,7 +245,7 @@ p.star {
 }
 
 .review-form textarea {
-    border: solid .5px var(--gold);
+    border: solid 0.5px var(--gold);
     color: var(--gold);
     background: transparent;
     resize: none;
@@ -265,7 +266,7 @@ input:focus {
 /* 2ND LEVEL - REVIEWS */
 
 .review-container {
-    border: solid .5px var(--gold);
+    border: solid 0.5px var(--gold);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -274,7 +275,7 @@ input:focus {
 }
 
 .review textarea {
-    border: solid .5px var(--gold);
+    border: solid 0.5px var(--gold);
     color: var(--gold);
     background: transparent;
     resize: none;
@@ -284,9 +285,6 @@ input:focus {
 .user {
     font-weight: 600;
 }
-
-
-
 
 /* GALLERY */
 
@@ -346,40 +344,50 @@ input:focus {
     box-shadow: 0 0 0 3px #0be2f6;
   } */
 
-
-
-
-
-
-  /* * {
+/* * {
     box-sizing: border-box;
   } */
-  
-  /* --no longer enormous-- */
-  
-  /* --controls width of images-- */
-  
-  
-  /* --Increases space above gallery-- */
-  /* @media screen and (min-width: 600px) { */
-    .gallery {
-      border: 1px solid red;
-      padding: 50px;
-      display: grid;
-      place-items: center;
-    }
-   
-  /* --can no longer change selected pic when turned on--  */
-   .gallery__img {
+
+/* --no longer enormous-- */
+
+/* --controls width of images-- */
+
+/* --Increases space above gallery-- */
+/* @media screen and (min-width: 600px) { */
+.gallery {
+    position: absolute;
+    z-index: 1;
+    top: 1425px;
+    width: 100%;
+    padding: 0px 50px 50px 50px;
+    display: grid;
+    place-items: center;
+}
+
+.gallery h4 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--darkGreen);
+}
+
+/* --can no longer change selected pic when turned on--  */
+.gallery__img {
     max-width: 80%;
     /* position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 0.3s ease-in-out; */
-  } 
+}
 
-  .all_thumbnails {
+.all_thumbnails {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -395,10 +403,10 @@ input:focus {
     max-width: 600px;
     position: relative;
     padding-top: calc(400px / 600px * 100%); */
-  }
-  
-  /* --barely shrinks? when active-- */
-   .gallery__thumb {
+}
+
+/* --barely shrinks? when active-- */
+.gallery__thumb {
     width: 125px;
     height: 125px;
     flex-basis: 10%;
@@ -406,36 +414,26 @@ input:focus {
     /* padding-top: 6px;
     margin: 6px;
     display: block; */
-  }
-  
-  /* --hides selection bubble when active-- */
-  /* .gallery__selector {
+}
+
+/* --hides selection bubble when active-- */
+/* .gallery__selector {
     position: absolute;
     opacity: 0;
     visibility: hidden;
   } */
-  
-  /* no-effect */
-  .gallery__selector:checked + .gallery__img {
+
+/* no-effect */
+.gallery__selector:checked + .gallery__img {
     opacity: 1;
-  }
-  
-  /* --no effect-- */
-  .gallery__selector:checked ~ .gallery__thumb > img {
-    box-shadow: 0 0 0 3px #0be2f6;;
-  } 
+}
 
+/* --no effect-- */
+.gallery__selector:checked ~ .gallery__thumb > img {
+    box-shadow: 0 0 0 3px #0be2f6;
+}
 
-
-
-
-
-
-
-
-
-
-  /* .image-gallery {
+/* .image-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
