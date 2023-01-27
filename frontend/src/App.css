@@ -188,8 +188,153 @@ p.star {
 
 /* GALLERY */
 
-.image-gallery {
+/* 2* {
+    box-sizing: border-box;
+  }
+  
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
+  
+  .gallery {
+    display: flex;
+    margin: 10px auto;
+    max-width: 600px;
+    position: relative;
+    padding-top: calc(400px / 600px * 100%);
+  }
+  
+  @media screen and (min-width: 600px) {
+    .gallery {
+      padding-top: 400px;
+    }
+  }
+  
+  .gallery__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .gallery__thumb {
+    padding-top: 6px;
+    margin: 6px;
+    display: block;
+    width: 100%;
+  }
+  
+  .gallery__selector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .gallery__selector:checked + .gallery__img {
+    opacity: 1;
+  }
+  
+  .gallery__selector:checked ~ .gallery__thumb > img {
+    box-shadow: 0 0 0 3px #0be2f6;
+  } */
+
+
+
+
+
+
+  /* * {
+    box-sizing: border-box;
+  } */
+  
+  /* --no longer enormous-- */
+  
+  /* --controls width of images-- */
+  
+  
+  /* --Increases space above gallery-- */
+  /* @media screen and (min-width: 600px) { */
+    .gallery {
+      border: 1px solid red;
+      padding: 50px;
+      display: grid;
+      place-items: center;
+    }
+   
+  /* --can no longer change selected pic when turned on--  */
+   .gallery__img {
+    max-width: 80%;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; */
+  } 
+
+  .all_thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+    width: 750px;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px; 
+    /* max-height: 30%;
+    max-width: 30%; */
+    /* margin: 10px auto;
+    max-width: 600px;
+    position: relative;
+    padding-top: calc(400px / 600px * 100%); */
+  }
+  
+  /* --barely shrinks? when active-- */
+   .gallery__thumb {
+    width: 125px;
+    height: 125px;
+    flex-basis: 10%;
+
+    /* padding-top: 6px;
+    margin: 6px;
+    display: block; */
+  }
+  
+  /* --hides selection bubble when active-- */
+  /* .gallery__selector {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  } */
+  
+  /* no-effect */
+  .gallery__selector:checked + .gallery__img {
+    opacity: 1;
+  }
+  
+  /* --no effect-- */
+  .gallery__selector:checked ~ .gallery__thumb > img {
+    box-shadow: 0 0 0 3px #0be2f6;;
+  } 
+
+
+
+
+
+
+
+
+
+
+
+  /* .image-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-}
+} */

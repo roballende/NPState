@@ -103,7 +103,7 @@ function App() {
                 <Map latitude={latitude} longitude={longitude} />
             </div>
             <Reviews parkReviews={parkReviews} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
-            <ImageGallery parkImages={parkImages} />
+            <ImageGallery parkName={parkName} parkImages={parkImages} />
         </div>
     )
 }

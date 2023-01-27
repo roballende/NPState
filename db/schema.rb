@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2023_01_26_003042) do
     t.string "name"
     t.string "description"
     t.string "url"
-    t.string "activity"
     t.float "latitude"
     t.float "longitude"
     t.string "hazard_title"
