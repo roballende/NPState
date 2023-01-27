@@ -8,11 +8,11 @@ function Reviews({ userID, username, selectedPark, parkReviews, handleReviewDele
     reviews = parkReviews
 
     return (
-        <div  className='component'>
-            <h4>REVIEWS</h4>
-            <div>
+        <div>
+            <h1>User Reviews</h1>
+            <div className='review-container'>
                 {reviews.map((review) => (
-                    <Review key={review.id} review={review} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username}/>
+                    <Review key={review.id} review={review} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
                 ))}
             </div>
         </div>

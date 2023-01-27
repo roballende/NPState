@@ -43,30 +43,32 @@ function Form({ newReviewSubmit, userID, selectedPark }) {
     }
 
     return (
-        <div className='component'>
-            <h1>Review & Rate</h1>
-            <form className='review-form' onSubmit={handleSubmit}>
+        <div className='review-form'>
+            <h1>REVIEW THIS PARK</h1>
+            <form onSubmit={handleSubmit}>
                 <textarea className='input-item' type='text' name='comment' onChange={handleCommentChange} value={comment} />
-                <div className='rating' onMouseLeave={() => handleStarHover(0)}>
-                    <p onClick={() => handleRatingChange(1)} onMouseEnter={() => handleStarHover(1)} className='star'>
-                        {rating >= 1 || hover >= 1 ? <StarIcon /> : <StarBorderIcon />}
-                    </p>
-                    <p onClick={() => handleRatingChange(2)} onMouseEnter={() => handleStarHover(2)} className='star'>
-                        {rating >= 2 || hover >= 2 ? <StarIcon /> : <StarBorderIcon />}
-                    </p>
-                    <p onClick={() => handleRatingChange(3)} onMouseEnter={() => handleStarHover(3)} className='star'>
-                        {rating >= 3 || hover >= 3 ? <StarIcon /> : <StarBorderIcon />}
-                    </p>
-                    <p onClick={() => handleRatingChange(4)} onMouseEnter={() => handleStarHover(4)} className='star'>
-                        {rating >= 4 || hover >= 4 ? <StarIcon /> : <StarBorderIcon />}
-                    </p>
-                    <p onClick={() => handleRatingChange(5)} onMouseEnter={() => handleStarHover(5)} className='star'>
-                        {rating >= 5 || hover >= 5 ? <StarIcon /> : <StarBorderIcon />}
-                    </p>
-                </div>
-                <button type='submit' className='submit-button'>
-                    Submit
-                </button>
+                    <div className='rating-submit' onMouseLeave={() => handleStarHover(0)}>
+                        <p onClick={() => handleRatingChange(1)} onMouseEnter={() => handleStarHover(1)} className='star'>
+                            {rating >= 1 || hover >= 1 ? <StarIcon /> : <StarBorderIcon />}
+                        </p>
+                        <p onClick={() => handleRatingChange(2)} onMouseEnter={() => handleStarHover(2)} className='star'>
+                            {rating >= 2 || hover >= 2 ? <StarIcon /> : <StarBorderIcon />}
+                        </p>
+                        <p onClick={() => handleRatingChange(3)} onMouseEnter={() => handleStarHover(3)} className='star'>
+                            {rating >= 3 || hover >= 3 ? <StarIcon /> : <StarBorderIcon />}
+                        </p>
+                        <p onClick={() => handleRatingChange(4)} onMouseEnter={() => handleStarHover(4)} className='star'>
+                            {rating >= 4 || hover >= 4 ? <StarIcon /> : <StarBorderIcon />}
+                        </p>
+                        <p onClick={() => handleRatingChange(5)} onMouseEnter={() => handleStarHover(5)} className='star'>
+                            {rating >= 5 || hover >= 5 ? <StarIcon /> : <StarBorderIcon />}
+                        </p>
+                    </div>
+                    <div className='rating-submit'>
+                        <button type='submit' className='submit-button'>
+                            Submit
+                        </button>
+                    </div>
             </form>
         </div>
     )
