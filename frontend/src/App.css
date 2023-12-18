@@ -363,7 +363,6 @@ input:focus {
   /* --Increases space above gallery-- */
   /* @media screen and (min-width: 600px) { */
     .gallery {
-      border: 1px solid red;
       padding: 50px;
       display: grid;
       place-items: center;

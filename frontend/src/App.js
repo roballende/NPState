@@ -103,12 +103,7 @@ function App() {
                 <Form userID={userID} selectedPark={selectedPark} newReviewSubmit={newReviewSubmit} />
                 <Reviews parkReviews={parkReviews} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
             </div>
-<<<<<<< Updated upstream
-            <Reviews parkReviews={parkReviews} handleReviewDelete={handleReviewDelete} handleReviewUpdate={handleReviewUpdate} userID={userID} selectedPark={selectedPark} username={username} />
-            <ImageGallery parkName={parkName} parkImages={parkImages} />
-=======
             <ImageGallery parkImages={parkImages} />
->>>>>>> Stashed changes
         </div>
     )
 }
